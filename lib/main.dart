@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inner_shadow/flutter_inner_shadow.dart';
-import './libaryneed/my_flutter_app_icons.dart';
+
 void main() {
   runApp(const FavouritesApp());
 }
@@ -30,7 +30,21 @@ class FavouritesPage extends StatefulWidget {
 }
 
 class _FavouritesPageState extends State<FavouritesPage> {
- 
+  
+
+  final List<Map<String, dynamic>> recipes = List.generate(5, (index) {
+    return {
+      'title': 'High Protein',
+      'time': '25 min',
+      'ingredients': '10 ingredients',
+      'rating': 4.4,
+      'imageUrl':'assets/favoritePageImage/salade.png',
+        
+          
+    };
+  });
+
+  
 
  
 
@@ -84,9 +98,26 @@ class _FavouritesPageState extends State<FavouritesPage> {
             height: 60,
             child: CategorySelector(),
           ),
-        
+        Expanded(
+            child: ListView.builder(
+              itemCount: recipes.length,
+              itemBuilder: (context, index) {
+                final item = recipes[index];
+                return RecipeCard(
+                  title: item['title'],
+                  time: item['time'],
+                  ingredients: item['ingredients'],
+                  rating: item['rating'],
+                  imageUrl: item['imageUrl'],
+                  
+                   
+                );
+              },
+            ),
+          ),
         ],
       ),
+      
       
     );
   }
@@ -162,4 +193,68 @@ class _CategorySelectorState extends State<CategorySelector> {
   }
 }
 
+class RecipeCard extends StatelessWidget {
+  final String title;
+  final String time;
+  final String ingredients;
+  final double rating;
+  final String imageUrl;
+  
 
+  const RecipeCard({
+    super.key,
+    required this.title,
+    required this.time,
+    required this.ingredients,
+    required this.rating,
+    required this.imageUrl,
+    
+    
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 0,
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      color: const Color(0xFFB9E7AD) ,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        
+        child: ListTile(
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              imageUrl,
+              fit: BoxFit.cover,
+              width: 60,
+              height: 60,
+            ),
+          ),
+          title: Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+          subtitle: Row(
+            children: [
+              Text('$time • ', style: const TextStyle(color: Colors.black54)),
+              Text(ingredients, style: const TextStyle(color: Colors.black54)),
+            ],
+          ),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(rating.toString(), style: const TextStyle(color: Colors.black54)),
+              const SizedBox(width: 4),
+              const Icon(Icons.star, color: Colors.amber, size: 18),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
