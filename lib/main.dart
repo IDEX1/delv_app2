@@ -1,4 +1,5 @@
 
+import 'package:delv_app/profil_page.dart';
 import 'package:delv_app/root_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,11 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       home: const RootScreen(),
+       routes: {
+        '/profile': (context) => const ProfilePage(),
+        '/language': (context) => const LanguageSelectionPage(),
+        '/edit_profile': (context) => const EditProfilePage(),
+      },
     );
   }
 }

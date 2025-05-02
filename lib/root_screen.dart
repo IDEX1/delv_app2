@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'favoritespage.dart';
+import 'profil_page.dart';
+
 import 'utils/app_colors.dart';
 
 class RootScreen extends StatefulWidget {
@@ -27,11 +29,14 @@ class _RootScreenState extends State<RootScreen> {
      final pages = <Widget>[
       FavouritesPage(onBack: () => _onNavItemTapped(2)),
       HomePage(),
+      HomePage(),
+      HomePage(),
+      SettingsPage(),
      
     ];
     return Scaffold(
       body: IndexedStack(
-        index: _selectedIndex == 2 ? 1 : 0,
+        index: _selectedIndex ,
         children: pages,
       ),
 
