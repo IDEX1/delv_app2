@@ -151,17 +151,12 @@ class _SettingsPageState extends State<SettingsPage> {
                             shape: BoxShape.circle,
                             color: Colors.green.withOpacity(0.2),
                             border: Border.all(color: Colors.white, width: 3),
+                            image: const DecorationImage(
+                        image: AssetImage('assets/profil.png'),
+                        fit: BoxFit.cover,
+                      ),
                           ),
-                          child: const Center(
-                            child: Text(
-                              "F",
-                              style: TextStyle(
-                                fontSize: 50,
-                                color: Colors.green,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                          
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -380,17 +375,12 @@ class ProfilePage extends StatelessWidget {
                                   blurRadius: 5,
                                 ),
                               ],
+                              image: const DecorationImage(
+                        image: AssetImage('assets/profil.png'),
+                        fit: BoxFit.cover,
+                      ),
                             ),
-                            child: const Center(
-                              child: Text(
-                                "F",
-                                style: TextStyle(
-                                  fontSize: 50,
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
+                            
                           ),
                         ),
                         Container(
@@ -612,17 +602,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               blurRadius: 5,
                             ),
                           ],
+                          image: const DecorationImage(
+                        image: AssetImage('assets/profil.png'),
+                        fit: BoxFit.cover,
+                      ),
                         ),
-                        child: const Center(
-                          child: Text(
-                            "F",
-                            style: TextStyle(
-                              fontSize: 50,
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
+                        
                       ),
                     ),
 
@@ -896,17 +881,12 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
                           shape: BoxShape.circle,
                           color: Colors.green.withOpacity(0.2),
                           border: Border.all(color: Colors.white, width: 3),
+                          image: const DecorationImage(
+                        image: AssetImage('assets/profil.png'),
+                        fit: BoxFit.cover,
+                      ),
                         ),
-                        child: const Center(
-                          child: Text(
-                            "F",
-                            style: TextStyle(
-                              fontSize: 50,
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
+                       
                       ),
                       const SizedBox(height: 10),
                       const Text(

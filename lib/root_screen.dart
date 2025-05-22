@@ -1,8 +1,9 @@
-// root_screen.dart
+
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'favoritespage.dart';
 import 'profil_page.dart';
+import 'calendar_screen.dart';
 
 import 'utils/app_colors.dart';
 
@@ -28,7 +29,7 @@ class _RootScreenState extends State<RootScreen> {
   Widget build(BuildContext context) {
      final pages = <Widget>[
       FavouritesPage(onBack: () => _onNavItemTapped(2)),
-      HomePage(),
+      CalendarScreen(),
       HomePage(),
       HomePage(),
       SettingsPage(),

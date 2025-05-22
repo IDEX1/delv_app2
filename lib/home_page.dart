@@ -54,9 +54,12 @@ class _HomePageState extends State<HomePage> {
                         shape: BoxShape.circle,
                         color: Colors.grey[300]?.withOpacity(0.5), // Placeholder color
                         border: Border.all(color: kPrimaryGreen, width: 1.5),
-                         // You'd use an Image asset here
+                         image: const DecorationImage(
+                        image: AssetImage('assets/profil.png'),
+                        fit: BoxFit.cover,
                       ),
-                      child: const Icon(Icons.restaurant_menu, color: kPrimaryGreen, size: 28),
+                      ),
+                      // child: const Icon(Icons.restaurant_menu, color: kPrimaryGreen, size: 28),
                     ),
                     const SizedBox(width: 12),
                     // Welcome Text - Use theme
