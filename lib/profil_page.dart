@@ -1,3 +1,4 @@
+import 'package:delv_app/sign_in.dart';
 import 'package:flutter/material.dart';
 
 // ===== PAGE DE PARAMÈTRES (PAGE PRINCIPALE) =====
@@ -125,7 +126,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                       const SizedBox(width: 16),
                       const Text(
-                        "Setting",
+                        "Profile",
                         style: TextStyle(
                           fontSize: 22,
                           color: Colors.green,
@@ -445,8 +446,11 @@ class ProfilePage extends StatelessWidget {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pop(context);
-                                  // Ici vous pourriez réinitialiser l'état et rediriger vers une page de connexion
+                                  Navigator.pushAndRemoveUntil(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => SignInScreen()),
+                                        (Route<dynamic> route) => false, 
+                                      );
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(content: Text('Déconnexion effectuée')),
                                   );

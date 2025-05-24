@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.grey[300]?.withOpacity(0.5), // Placeholder color
                         border: Border.all(color: kPrimaryGreen, width: 1.5),
                          image: const DecorationImage(
-                        image: AssetImage('assets/profil.png'),
+                        image: AssetImage('assets/1.png'),
                         fit: BoxFit.cover,
                       ),
                       ),

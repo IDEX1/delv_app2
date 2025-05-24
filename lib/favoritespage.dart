@@ -46,7 +46,8 @@ class _FavouritesPageState extends State<FavouritesPage> {
               blurRadius: 4,
             ),
           ],
-          child: const Icon(arrow_circle_left_outlined, color : Color(0xFFB9E7AD),size: 42.0,),
+          
+          child: const Icon(Icons.arrow_back, color: Colors.green),
           ),
           
           onPressed: widget.onBack,
